@@ -2,11 +2,9 @@
 
 ## Introduction
 
-Aptoide Scraper is a demonstration web service dedicated to scrap some information about aptoide applications by just copy-pasting it's url `https://app_to_scrap.en.aptoide.com/app` into an url field and clicking on the scrap button to let the magic happens.
+Aptoide Scraper is a demonstration web service dedicated to scrap some information about aptoide applications by just copy-pasting its url `https://app_to_scrap.en.aptoide.com/app` into an url field and clicking on the scrap button to let the magic happens.
 
 > The application has been developped with django as web-service framework, requests for http requesting and beautiful soup for http response scraping with html5lib for html parsing.
-
----
 
 ## Code Base
 
@@ -36,13 +34,9 @@ The code is organized as following (the uncommented files are the ones automatic
 
 > Eached scraped application is interpreted as a django model instance and thus stored into database. We could imagine further treatments based on this storage like using stored data for multiple requests to the same aptoide's application within a given time lapse.
 
----
-
 ## Behavior
 
 The core application's behavior is controlled by its two views, the index view accessed at home page which displays a form with an aptoide application url field to fill. A submit button tries a form validation, once validated the aptoide application url is scraped, the corresponding model is created or updated in the database and the user is redirected to the detail view of the scraped application.
-
----
 
 ## Installation
 
@@ -54,18 +48,14 @@ pip install -r requirements.txt
 cd aptoide_scraper
 ```
 
----
-
 ## Type checking
 
-To check types on th application you shoul run:
+To type-check the web service´s code base you should run:
 ```powershell
 mypy core/
 mypy aptoide_scraper/
 ```
 All the lasting errors must be inherited from the web framework django and generated migrations.
-
----
 
 ## Usage
 
@@ -81,7 +71,7 @@ coverage run manage.py test core.tests.test_unit
 coverage report
 ```
 
-Or run functional test to ensure multilangage functionning on a given aptoide application's url panel:
+Or even run functional test to ensure multilangage functionning on a given aptoide application's url panel:
 ```powershell
 python manage.py test core.tests.test_functional
 ```
