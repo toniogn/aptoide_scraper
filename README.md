@@ -40,6 +40,11 @@ The core application's behavior is controlled by its two views, the index view a
 
 ## Installation
 
+First of all you should create a local clone of the code repository:
+```powershell
+git clone https://github.com/toniogn/aptoide_scraper.git
+```
+
 Before running the application first install dependencies in a python virtual environment with:
 ```powershell
 python -m venv your_venv_name
