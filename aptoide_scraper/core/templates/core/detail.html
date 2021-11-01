@@ -1,0 +1,10 @@
+<center><h2>Details on the application {{ aptoide_app.name }}</h2></center>
+
+<ul>
+    <li><b>Version</b>: {{ aptoide_app.version }}</li>
+    <li><b>Downloads number</b>: {{ aptoide_app.downloads_number }}</li>
+    <li><b>Release date</b>: {{ aptoide_app.release_date }}</li>
+    <li><b>Description</b>: {{ aptoide_app.description }}</li>
+</ul>
+
+<a href="{% url 'core:index' %}">Scrap again ?</a>
