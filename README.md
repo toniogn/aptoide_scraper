@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Aptoide Scraper is a web service dedicated to scrap some information about aptoide applications by just copy-pasting it's url `https://app_to_scrap.en.aptoide.com/app` into the url field and click on the scrap button to let the magic happens.
+Aptoide Scraper is a demonstration web service dedicated to scrap some information about aptoide applications by just copy-pasting it's url `https://app_to_scrap.en.aptoide.com/app` into an url field and clicking on the scrap button to let the magic happens.
 
 > The application has been developped with django as web-service framework, requests for http requesting and beautiful soup for http response scraping with html5lib for html parsing.
 
@@ -40,7 +40,7 @@ The code is organized as following (the uncommented files are the ones automatic
 
 ## Behavior
 
-The core application's behavior is controlled by its two views, the index view accessed at home page which displays a form with an aptoide application url field to fill. A submit button tries a form validation, once validated the aptoide application url is scraped, the corresponding model is created or updated in the database and th user is redirected to the detail view of the scraped application.
+The core application's behavior is controlled by its two views, the index view accessed at home page which displays a form with an aptoide application url field to fill. A submit button tries a form validation, once validated the aptoide application url is scraped, the corresponding model is created or updated in the database and the user is redirected to the detail view of the scraped application.
 
 ---
 
