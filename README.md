@@ -90,4 +90,4 @@ python manage.py test core.tests.test_functional
 
 ## Troubleshooting
 
-Everything should work fine if you are not working behind a proxy, otherwise you could receive some implied connection errors. To fix it you must define a system environment variable https_proxy to htt://username:password@host:port. If any other kind of error occurs, don't hesistate to open an issue, it would be fixed as soon as possible.
+Everything should work fine if you are not working behind a proxy, otherwise you could receive some implied connection errors. To fix it you must define a system environment variable https_proxy to `http://username:password@host:port`. If any other kind of error occurs, don't hesistate to open an issue, it would be fixed as soon as possible.
