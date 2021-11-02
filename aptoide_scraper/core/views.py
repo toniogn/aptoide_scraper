@@ -72,11 +72,11 @@ class IndexView(generic.FormView):
         """
         request = requests.get(url)
         soup = BeautifulSoup(request.content, "html5lib")
-        try:
+        try: # according to functional tests most langages are covered by this awfull span class attribute
             downloads_number = soup.find(
                 "span", attrs={"class": "mini-stats__Info-sc-188veh1-6 hwoUxO"}
             ).text
-        except AttributeError:
+        except AttributeError: # some exotic ones are covered by this other one
             downloads_number = soup.find(
                 "span", attrs={"class": "mini-stats__Info-sc-188veh1-6 goCMQs"}
             ).text
