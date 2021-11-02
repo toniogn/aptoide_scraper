@@ -16,27 +16,27 @@ The code is organized as following (the uncommented files are the ones automatic
 ---------> settings.py #settings of the django project
 ---------> urls.py #url configuration of the django project
 ---------> wsgi.py
------> core: #django application folder
----------> migrations #application's models migrations folder
----------> templates #application's views html templates
--------------> detail.html #html template of the detail view of a scraped aptoide url
--------------> index.html #html template of the index view of the application
----------> tests: #application's tests
--------------> test_unit.py #unit tests of the application
--------------> test_functional.py #functional tests of the application
+-----> core: #django core application folder
+---------> migrations #core application's models migrations folder
+---------> templates #core application's views html templates
+-------------> detail.html #html template of the detail view of a scraped aptoide app
+-------------> index.html #html template of the index view of the core application
+---------> tests: #core application's tests
+-------------> test_unit.py #unit tests of the core application
+-------------> test_functional.py #functional tests of the core application
 ---------> admin.py
 ---------> apps.py
----------> forms.py #application's custom forms to use in FormView views
----------> models.py #application's orm to map data to django's database
----------> urls.py #url configuration of the application
----------> views.py #views of the application
+---------> forms.py #core application's custom forms to use in FormView views
+---------> models.py #core application's orm to map data to django's database
+---------> urls.py #url configuration of the core application
+---------> views.py #views of the core application
 ```
 
-> Eached scraped application is interpreted as a django model instance and thus stored into database. We could imagine further treatments based on this storage like using stored data for multiple requests to the same aptoide's application within a given time lapse.
+> Eached scraped application is interpreted as a django model instance and thus stored into database. We could imagine further treatments based on this storage like using stored data for multiple scrap requests to the same aptoide's application within a given time lapse.
 
 ## Behavior
 
-The core application's behavior is controlled by its two views, the index view accessed at home page which displays a form with an aptoide application url field to fill. A submit button tries a form validation, once validated the aptoide application url is scraped, the corresponding model is created or updated in the database and the user is redirected to the detail view of the scraped application.
+The core application's behavior is controlled by its two views, the index view accessed at home page which displays a form with an aptoide application url field to fill. A submit button tries a form validation, once validated the aptoide application url is scraped, the corresponding model is created or updated in the database and the user is redirected to the detail view of the scraped application in case of success.
 
 ## Installation
 
@@ -80,3 +80,7 @@ Or even run functional test to ensure multilangage functionning on a given aptoi
 ```powershell
 python manage.py test core.tests.test_functional
 ```
+
+## Troubleshooting
+
+Everything should work fine if you are not working behind a proxy, otherwise you could receive some implied connection errors. If any other kind of error occurs, don't hesistate to open an issue, it would be fixed as soon as possible.
